@@ -1,4 +1,3 @@
-from django.forms import widgets
 from django.contrib.auth.models import User
 
 from rest_framework import serializers
@@ -12,7 +11,7 @@ class FavoriteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Favorite
-        fields = ('content', 'description', 'owner', 'created')
+        fields = ('id', 'content', 'description', 'owner', 'created')
 
 
 class UserSerializer(serializers.ModelSerializer):
