@@ -6,13 +6,13 @@ from rest_framework import serializers
 from core.models import Favorite
 
 
-class FavoriteSerializer(serializers.HyperlinkedModelSerializer):
+class FavoriteSerializer(serializers.ModelSerializer):
 
     owner = serializers.Field(source='owner.username')
 
     class Meta:
         model = Favorite
-        fields = ('url', 'content', 'description', 'owner', 'created')
+        fields = ('content', 'description', 'owner', 'created')
 
 
 class UserSerializer(serializers.ModelSerializer):
