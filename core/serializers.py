@@ -15,9 +15,9 @@ class FavoriteSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'content', 'description', 'owner', 'created')
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     favorites = FavoriteSerializer(many=True, view_name='favorite-detail')
 
     class Meta:
         model = User
-        fields = ('url', 'username', 'email', 'favorites')
+        fields = ('id', 'username', 'email', 'favorites')
