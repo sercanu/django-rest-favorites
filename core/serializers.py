@@ -16,7 +16,7 @@ class FavoriteSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    favorites = serializers.HyperlinkedRelatedField(many=True, view_name='favorite-detail')
+    favorites = FavoriteSerializer(many=True, view_name='favorite-detail')
 
     class Meta:
         model = User
