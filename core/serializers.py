@@ -15,7 +15,7 @@ class FavoriteSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    favorites = FavoriteSerializer(many=True, view_name='favorite-detail') 
+    favorites = FavoriteSerializer(many=True)
 
     class Meta:
         model = User
