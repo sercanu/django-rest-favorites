@@ -20,4 +20,3 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'email', 'favorites')
-        lookup_field = 'username'
