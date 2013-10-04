@@ -12,7 +12,7 @@ urlpatterns = format_suffix_patterns(patterns('core.views',
     url(r'^favorites/$', views.FavoriteList.as_view(), name='favorite-list'),
     url(r'^favorites/(?P<pk>[0-9]+)/$', views.FavoriteDetail.as_view(), name='favorite-detail'),
     url(r'^users/$', views.UserList.as_view(), name='user-list'),
-    url(r'^users/(?P<username>[a-z])/$', views.UserDetail.as_view(), name='user-detail')
+    url(r'^users/(?P<username>\w+)/$', views.UserDetail.as_view(), name='user-detail')
 ))
 
 # Login and logout views for the browsable API
