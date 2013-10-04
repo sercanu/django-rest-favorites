@@ -5,7 +5,7 @@ from rest_framework import serializers
 from core.models import Favorite
 
 
-class FavoriteSerializer(serializers.ModelSerializer):
+class FavoriteSerializer(serializers.HyperlinkedModelSerializer):
 
     owner = serializers.Field(source='owner.username')
 
@@ -14,7 +14,7 @@ class FavoriteSerializer(serializers.ModelSerializer):
         fields = ('id', 'content', 'description', 'owner', 'created')
 
 
-class UserSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.HyperlinkedModelSerializer):
     favorites = FavoriteSerializer(many=True)
 
     class Meta:
