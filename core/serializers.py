@@ -6,6 +6,9 @@ from core.models import Favorite
 
 
 class FavoriteSerializer(serializers.ModelSerializer):
+    """
+    How to serialize favorites
+    """
 
     owner = serializers.Field(source='owner.username')
 
@@ -15,6 +18,9 @@ class FavoriteSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    """
+    How to serialize users
+    """
     favorites = FavoriteSerializer(many=True)
 
     class Meta:

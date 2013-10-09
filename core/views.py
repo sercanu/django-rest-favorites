@@ -12,6 +12,9 @@ from core.permissions import IsOwnerOrReadOnly, IsUser
 
 
 class FavoriteList(generics.ListCreateAPIView):
+    """
+    List all favorites
+    """
     queryset = Favorite.objects.all()
     serializer_class = FavoriteSerializer
 
@@ -22,6 +25,9 @@ class FavoriteList(generics.ListCreateAPIView):
 
 
 class FavoriteDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    List only authenticated user's favorites
+    """
     queryset = Favorite.objects.all()
     serializer_class = FavoriteSerializer
 
@@ -32,11 +38,17 @@ class FavoriteDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 class UserList(generics.ListAPIView):
+    """
+    List all users
+    """
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
 
 class UserDetail(generics.RetrieveAPIView):
+    """
+    List only authenticated user's details with favorites
+    """
     lookup_field = 'username'
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -46,6 +58,9 @@ class UserDetail(generics.RetrieveAPIView):
 
 @api_view(('GET',))
 def api_root(request, format=None):
+    """
+    Bring together all urls
+    """
     return Response({
         'users': reverse('user-list', request=request, format=format),
         'favorites': reverse('favorite-list', request=request, format=format)
