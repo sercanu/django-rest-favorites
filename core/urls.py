@@ -8,7 +8,7 @@ from core import views
 
 # API endpoints
 urlpatterns = format_suffix_patterns(patterns('core.views',
-    url(r'^api/$', 'api_root', name="api_root"),
+    url(r'^$', 'api_root', name="api_root"),
     url(r'^favorites/$', views.FavoriteList.as_view(), name='favorite-list'),
     url(r'^favorites/(?P<pk>[0-9]+)/$', views.FavoriteDetail.as_view(), name='favorite-detail'),
     url(r'^users/$', views.UserList.as_view(), name='user-list'),
