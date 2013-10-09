@@ -10,4 +10,9 @@ coverage==3.6
 django-discover-runner==1.0
 django-debug-toolbar==0.9.4
 Sphinx==1.2b1
+dj-database-url==0.2.2
+dj-static==0.0.5
+psycopg2==2.5.1
+gunicorn==0.17.4
+static==0.4
 
