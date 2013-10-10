@@ -9,3 +9,4 @@ Django REST framework project example
 #. Project runs on Heroku. http://favorites-be.herokuapp.com/
 #. Docs are here. Nearly no docs :) http://django-rest-favorites.readthedocs.org/en/latest/
 #. Check out http://django-rest-framework.org/
+ 
